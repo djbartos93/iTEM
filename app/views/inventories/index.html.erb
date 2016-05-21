@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inventories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tc part</th>
+      <th>Short desc</th>
+      <th>Description</th>
+      <th>Manufacture</th>
+      <th>Tc type</th>
+      <th>Product part</th>
+      <th>Tc cat</th>
+      <th>Tc wh</th>
+      <th>Tc isle</th>
+      <th>Tc shelf</th>
+      <th>Quantity hand</th>
+      <th>Min quantity</th>
+      <th>Quantity used</th>
+      <th>Last order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventories.each do |inventory| %>
+      <tr>
+        <td><%= inventory.tc_part %></td>
+        <td><%= inventory.short_desc %></td>
+        <td><%= inventory.description %></td>
+        <td><%= inventory.manufacture %></td>
+        <td><%= inventory.tc_type %></td>
+        <td><%= inventory.product_part %></td>
+        <td><%= inventory.tc_cat %></td>
+        <td><%= inventory.tc_wh %></td>
+        <td><%= inventory.tc_isle %></td>
+        <td><%= inventory.tc_shelf %></td>
+        <td><%= inventory.quantity_hand %></td>
+        <td><%= inventory.min_quantity %></td>
+        <td><%= inventory.quantity_used %></td>
+        <td><%= inventory.last_order %></td>
+        <td><%= link_to 'Show', inventory %></td>
+        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inventory', new_inventory_path %>

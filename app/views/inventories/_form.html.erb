@@ -1,0 +1,73 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tc_part %><br>
+    <%= f.text_field :tc_part %>
+  </div>
+  <div class="field">
+    <%= f.label :short_desc %><br>
+    <%= f.text_field :short_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :manufacture %><br>
+    <%= f.text_field :manufacture %>
+  </div>
+  <div class="field">
+    <%= f.label :tc_type %><br>
+    <%= f.text_field :tc_type %>
+  </div>
+  <div class="field">
+    <%= f.label :product_part %><br>
+    <%= f.text_field :product_part %>
+  </div>
+  <div class="field">
+    <%= f.label :tc_cat %><br>
+    <%= f.text_field :tc_cat %>
+  </div>
+  <div class="field">
+    <%= f.label :tc_wh %><br>
+    <%= f.text_field :tc_wh %>
+  </div>
+  <div class="field">
+    <%= f.label :tc_isle %><br>
+    <%= f.text_field :tc_isle %>
+  </div>
+  <div class="field">
+    <%= f.label :tc_shelf %><br>
+    <%= f.text_field :tc_shelf %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_hand %><br>
+    <%= f.number_field :quantity_hand %>
+  </div>
+  <div class="field">
+    <%= f.label :min_quantity %><br>
+    <%= f.number_field :min_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_used %><br>
+    <%= f.number_field :quantity_used %>
+  </div>
+  <div class="field">
+    <%= f.label :last_order %><br>
+    <%= f.text_field :last_order %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

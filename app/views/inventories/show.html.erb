@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tc part:</strong>
+  <%= @inventory.tc_part %>
+</p>
+
+<p>
+  <strong>Short desc:</strong>
+  <%= @inventory.short_desc %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @inventory.description %>
+</p>
+
+<p>
+  <strong>Manufacture:</strong>
+  <%= @inventory.manufacture %>
+</p>
+
+<p>
+  <strong>Tc type:</strong>
+  <%= @inventory.tc_type %>
+</p>
+
+<p>
+  <strong>Product part:</strong>
+  <%= @inventory.product_part %>
+</p>
+
+<p>
+  <strong>Tc cat:</strong>
+  <%= @inventory.tc_cat %>
+</p>
+
+<p>
+  <strong>Tc wh:</strong>
+  <%= @inventory.tc_wh %>
+</p>
+
+<p>
+  <strong>Tc isle:</strong>
+  <%= @inventory.tc_isle %>
+</p>
+
+<p>
+  <strong>Tc shelf:</strong>
+  <%= @inventory.tc_shelf %>
+</p>
+
+<p>
+  <strong>Quantity hand:</strong>
+  <%= @inventory.quantity_hand %>
+</p>
+
+<p>
+  <strong>Min quantity:</strong>
+  <%= @inventory.min_quantity %>
+</p>
+
+<p>
+  <strong>Quantity used:</strong>
+  <%= @inventory.quantity_used %>
+</p>
+
+<p>
+  <strong>Last order:</strong>
+  <%= @inventory.last_order %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

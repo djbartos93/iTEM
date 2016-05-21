@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :materials
+  resources :jobs
+  resources :inventories
+  get '/' => 'inventories#index'
+
+  get '/jobs' => 'jobs#index'
+
+  get '/materials' => 'materials#index'
+
+  get '/parts' => 'jobs#parts'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
