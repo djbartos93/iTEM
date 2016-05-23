@@ -1,3 +1,14 @@
+
+<div>
+      <%= form_tag(search_query_path, method: "post", id: "search") do %>
+      <span>
+        <%= text_field_tag(:search, nil, placeholder: "Search", id: "search") %>
+    </span>
+    <% end %>
+</div>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Inventories</h1>
