@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519151213) do
+ActiveRecord::Schema.define(version: 20160523040122) do
 
   create_table "inventories", force: :cascade do |t|
     t.string   "tc_part"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160519151213) do
   end
 
   create_table "materials", force: :cascade do |t|
-    t.integer  "job"
+    t.integer  "material_job"
     t.string   "part_number"
     t.text     "part_description"
     t.integer  "quantity_used"

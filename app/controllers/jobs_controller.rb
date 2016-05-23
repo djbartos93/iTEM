@@ -1,15 +1,18 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
+
   # GET /jobs
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @materials = Material.all
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @materials = Material.where(material_job: @job.job_id)
   end
 
   # GET /jobs/new
@@ -67,8 +70,16 @@ class JobsController < ApplicationController
       @job = Job.find(params[:id])
     end
 
+    #def set_material
+    #  @material = Material.find(params[:id])
+  #  end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
       params.require(:job).permit(:job_id, :location, :description, :due_by, :created, :priority)
     end
+
+  #  def material_params
+  #    params.require(:material).permit(:job, :part_number, :part_description, :quantity_used, :closet)
+  #  end
 end

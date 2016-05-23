@@ -32,3 +32,32 @@
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
+
+<br> materials
+add material <%= link_to 'New Material', new_material_path %>
+<p>
+  <table>
+    <thead>
+      <tr>
+        <th>Job</th>
+        <th>part number</th>
+        <th>Part Description</th>
+        <th>Quantity used</th>
+        <th>closet?</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @materials.each do |material| %>
+        <tr>
+        <td><%= material.material_job %></td>
+          <td><%= material.part_number %></td>
+          <td><%= material.part_description %></td>
+          <td><%= material.quantity_used %></td>
+          <td><%= material.closet %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>

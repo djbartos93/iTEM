@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :job %><br>
-    <%= f.text_field :job %>
+    <%= f.collection_select :material_job, Job.order(job_id: :asc), :job_id, :job_id, {prompt: true} %>
   </div>
   <div class="field">
     <%= f.label :part_number %><br>

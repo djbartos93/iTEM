@@ -1,6 +1,7 @@
 class MaterialsController < ApplicationController
   before_action :set_material, only: [:show, :edit, :update, :destroy]
 
+
   # GET /materials
   # GET /materials.json
   def index
@@ -69,6 +70,6 @@ class MaterialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def material_params
-      params.require(:material).permit(:job, :part_number, :part_description, :quantity_used, :closet)
+      params.require(:material).permit(:material_job, :part_number, :part_description, :quantity_used, :closet)
     end
 end
