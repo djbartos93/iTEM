@@ -7,6 +7,10 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all
   end
 
+  def import
+    Inventory.import(params[:file])
+    redirect_to root_url, notice: "Imported"
+  end
   # GET /inventories/1
   # GET /inventories/1.json
   def show

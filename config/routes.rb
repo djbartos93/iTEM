@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :materials
   resources :jobs
-  resources :inventories
+  resources :inventories do
+    collection { post :import }
+  end
   get '/' => 'inventories#index'
 
   get '/jobs' => 'jobs#index'
