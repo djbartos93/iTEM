@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523040122) do
+ActiveRecord::Schema.define(version: 20160523124239) do
 
   create_table "inventories", force: :cascade do |t|
     t.string   "tc_part"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160523040122) do
     t.string   "priority"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "status"
   end
 
   create_table "materials", force: :cascade do |t|
