@@ -29,6 +29,9 @@
       <th>Min quantity</th>
       <th>Quantity used</th>
       <th>Last order</th>
+      <th>Product Barcode</th>
+      <th>TC Barcode</th>
+      <th>Import Disabled</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -50,6 +53,9 @@
         <td><%= inventory.min_quantity %></td>
         <td><%= inventory.quantity_used %></td>
         <td><%= inventory.last_order %></td>
+        <td><%= inventory.product_barcode %></td>
+        <td><%= inventory.tc_barcode %></td>
+        <td><%= inventory.import_status %></td>
         <td><%= link_to 'Show', inventory %></td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
         <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -8,7 +8,9 @@ class InventoriesController < ApplicationController
   end
 
   def import
-    Inventory.import(params[:file])
+    import = Import.new(file:(params[:file]))
+    import.run!
+    import.report.message
     redirect_to root_url, notice: "Imported"
   end
   # GET /inventories/1
@@ -73,6 +75,6 @@ class InventoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_params
-      params.require(:inventory).permit(:tc_part, :short_desc, :description, :manufacture, :tc_type, :product_part, :tc_cat, :tc_wh, :tc_isle, :tc_shelf, :quantity_hand, :min_quantity, :quantity_used, :last_order)
+      params.require(:inventory).permit(:tc_part, :short_desc, :description, :manufacture, :tc_type, :product_part, :tc_cat, :tc_wh, :tc_isle, :tc_shelf, :quantity_hand, :min_quantity, :quantity_used, :last_order, :product_barcode, :tc_barcode, :import_status)
     end
 end

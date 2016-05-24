@@ -69,6 +69,18 @@
   <strong>Last order:</strong>
   <%= @inventory.last_order %>
 </p>
+<p>
+  <strong>Product Barcode</strong>
+  <%= @inventory.product_barcode %>
+</p>
+<p>
+  <strong>TC Barcode</strong>
+  <%= @inventory.tc_barcode %>
+</p>
+<p>
+  <strong>Import status</strong>
+  <%= @inventory.import_status %>
+</p>
 
 <%= link_to 'Edit', edit_inventory_path(@inventory) %> |
 <%= link_to 'Back', inventories_path %>
