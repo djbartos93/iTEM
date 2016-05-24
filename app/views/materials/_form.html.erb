@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :part_number %><br>
-    <%= f.text_field :part_number %>
+    <%= f.collection_select :part_number, Inventory.order(tc_part: :asc), :tc_part, :tc_part, {prompt: true} %>
   </div>
   <div class="field">
     <%= f.label :part_description %><br>
