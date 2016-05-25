@@ -4,7 +4,7 @@ class Import
   model Inventory
 
   column :tc_part, required: true
-  column :short_desc, required: false
+  column :short_desc, required: true
   column :description, required: false
   column :manufacture, required: false
   column :tc_type, required: false
