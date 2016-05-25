@@ -7,11 +7,13 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all
   end
 
+  #below is how we import the CSV, see the file in ../lib/Import.rb for more info on how this is working
   def import
     import = Import.new(file:(params[:file]))
     import.run!
     import.report.message
-    redirect_to root_url, notice: "Imported"
+    Inventory.import_enable
+    redirect_to root_url, notice: "imported and enabled import for all values not set by user."
   end
   # GET /inventories/1
   # GET /inventories/1.json
@@ -66,6 +68,10 @@ class InventoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

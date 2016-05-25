@@ -27,8 +27,13 @@ This is in no particular order, just what came to mind.
 - [ ] search specific categories via drop down
 - [ ] add management system for boxes of cables and spools of cable
 - [ ] navigation!
-- [ ] authentication?
+- [ ] LDAP authentication!
 - [ ] switch database to pgdb
 - [ ] global autofill in search
+- [ ] add notes field to materials being added to jobs
+- [ ] add notes field to jobs
+- [ ] remove manual import, replace with nightly import script
 
 more to come
+
+See wiki for full documentation

@@ -6,12 +6,14 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+  #allow listing of the Materials database in the Jobs index
     @materials = Material.all
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+  #showing the materials associated with each job
     @materials = Material.where(material_job: @job.job_id)
   end
 
