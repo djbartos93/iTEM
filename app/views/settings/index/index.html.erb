@@ -1,0 +1,13 @@
+<h1>Settings</h1>
+
+<h3>Cable Types</h3>
+<%= form_for [:settings, @new_type] do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create", class: 'btn btn--s btn--gray' %>
+<% end %>
+<br>
+<ul>
+  <% @types.each do |type| %>
+  <li><%= type.name %> <%= link_to '', settings_type_path(type), method: :delete, class: "ion-ios-close-outline" %></li>
+  <% end %>
+</ul>

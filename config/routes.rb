@@ -22,5 +22,11 @@ Rails.application.routes.draw do
   post 'search/query'
 
 
+  namespace :settings do
+    root to: 'index#index'
+
+    resources :types, only: [:create, :destroy]
+  end
+
 
 end

@@ -69,6 +69,6 @@ class CablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cable_params
-      params.require(:cable).permit(:type, :box_number, :length)
+      params.require(:cable).permit(:cable_type, :box_number, :length)
     end
 end

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524202702) do
+ActiveRecord::Schema.define(version: 20160526015639) do
+
+  create_table "cables", force: :cascade do |t|
+    t.string   "cable_type"
+    t.integer  "box_number"
+    t.integer  "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "inventories", force: :cascade do |t|
     t.string   "tc_part"
@@ -56,6 +64,21 @@ ActiveRecord::Schema.define(version: 20160524202702) do
     t.boolean  "closet"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string  "type",         null: false
+    t.string  "string_value"
+    t.integer "int_value"
+    t.date    "date_value"
+  end
+
+  add_index "settings", ["type"], name: "index_settings_on_type", unique: true
+
+  create_table "types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
