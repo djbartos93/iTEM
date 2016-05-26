@@ -18,7 +18,7 @@ class Import
   column :last_order, required: false
   column :import_status, required: false
 
-  identifier :tc_part
+  identifier :tc_part, :import_status
   when_invalid :skip
 
 

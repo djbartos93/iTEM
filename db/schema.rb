@@ -13,8 +13,28 @@
 
 ActiveRecord::Schema.define(version: 20160524202702) do
 
-# Could not dump table "inventories" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "inventories", force: :cascade do |t|
+    t.string   "tc_part"
+    t.string   "short_desc"
+    t.text     "description"
+    t.string   "manufacture"
+    t.string   "tc_type"
+    t.string   "product_part"
+    t.string   "tc_cat"
+    t.string   "tc_wh"
+    t.string   "tc_isle"
+    t.string   "tc_shelf"
+    t.integer  "quantity_hand"
+    t.integer  "min_quantity"
+    t.integer  "quantity_used"
+    t.string   "last_order_quantity"
+    t.date     "last_order"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "product_barcode"
+    t.string   "tc_barcode"
+    t.boolean  "import_status"
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.integer  "job_id"

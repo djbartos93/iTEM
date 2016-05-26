@@ -9,10 +9,10 @@ class InventoriesController < ApplicationController
 
   #below is how we import the CSV, see the file in ../lib/Import.rb for more info on how this is working
   def import
+    #Inventory.import_enable
     import = Import.new(file:(params[:file]))
     import.run!
     import.report.message
-    Inventory.import_enable
     redirect_to root_url, notice: "imported and enabled import for all values not set by user."
   end
   # GET /inventories/1

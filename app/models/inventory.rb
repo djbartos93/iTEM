@@ -3,10 +3,16 @@ class Inventory < ActiveRecord::Base
   searchkick
   require 'csv'
 
+  #add column to CSV to control importing
+  def self.add_status(file)
+
+
+  end
+
   #sets all items with "nill" to allow import
   def self.import_enable
-    Inventory.where(import_status: '').each do |enable|
-      enable.update_attribute :import_status, '0'
+    Inventory.all.each do |enable|
+      enable.update_attribute :import_status, 'false'
     end
   end
 
