@@ -30,10 +30,14 @@ This is in no particular order, just what came to mind.
 - [ ] LDAP authentication!
 - [ ] switch database to pgdb
 - [ ] global autofill in search
-- [ ] add notes field to materials being added to jobs
-- [ ] add notes field to jobs
 - [ ] remove manual import, replace with nightly import script
+- [ ] cable box barcodes
+- [ ] cable box barcode printing
 
+#COMPLETED
+
+- [x] add notes field to materials being added to jobs
+- [x] add notes field to jobs
 more to come
 
 See wiki for full documentation

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526194928) do
+ActiveRecord::Schema.define(version: 20160526204601) do
 
   create_table "cables", force: :cascade do |t|
     t.integer  "box_number"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160526194928) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "status"
+    t.text     "notes"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160526194928) do
     t.boolean  "closet"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "notes"
   end
 
   create_table "settings", force: :cascade do |t|
