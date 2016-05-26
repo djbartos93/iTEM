@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cables
   root to: 'inventories#index'
 
   resources :materials

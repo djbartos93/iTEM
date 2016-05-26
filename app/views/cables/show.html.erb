@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @cable.type %>
+</p>
+
+<p>
+  <strong>Box number:</strong>
+  <%= @cable.box_number %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @cable.length %>
+</p>
+
+<%= link_to 'Edit', edit_cable_path(@cable) %> |
+<%= link_to 'Back', cables_path %>
