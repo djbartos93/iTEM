@@ -11,15 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526015639) do
+ActiveRecord::Schema.define(version: 20160526194928) do
 
   create_table "cables", force: :cascade do |t|
-    t.string   "cable_type"
     t.integer  "box_number"
     t.integer  "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "type_ids"
   end
+
+  add_index "cables", ["type_ids"], name: "index_cables_on_type_ids"
+
+  create_table "cables_types", id: false, force: :cascade do |t|
+    t.integer  "cable_id"
+    t.integer  "type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cables_types", ["cable_id"], name: "index_cables_types_on_cable_id"
+  add_index "cables_types", ["type_id"], name: "index_cables_types_on_type_id"
 
   create_table "inventories", force: :cascade do |t|
     t.string   "tc_part"

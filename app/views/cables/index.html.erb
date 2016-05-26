@@ -15,7 +15,9 @@
   <tbody>
     <% @cables.each do |cable| %>
       <tr>
-        <td><%= cable.cable_type %></td>
+        <td>  <% cable.types.each do |type|%>
+              <%= type.name %>
+          <% end %></td>
         <td><%= cable.box_number %></td>
         <td><%= cable.length %></td>
         <td><%= link_to 'Show', cable %></td>

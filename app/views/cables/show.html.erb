@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @cable.cable_type %>
+  <strong>Cable Type:</strong>
+  <% @cable.types.each do |type|%>
+    <br>- <%= type.name %>
+  <% end %>
 </p>
-
 <p>
   <strong>Box number:</strong>
   <%= @cable.box_number %>

@@ -10,6 +10,10 @@ class CablesController < ApplicationController
   # GET /cables/1
   # GET /cables/1.json
   def show
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @cable }
+    end
   end
 
   # GET /cables/new
@@ -69,6 +73,6 @@ class CablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cable_params
-      params.require(:cable).permit(:cable_type, :box_number, :length)
+      params.require(:cable).permit(:box_number, :length, :type_ids =>[])
     end
 end

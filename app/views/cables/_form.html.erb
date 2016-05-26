@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cable_type %><br>
-    <%= f.text_field :cable_type %>
+    <%= f.label :types %><br>
+    <%= f.collection_select :type_ids, Type.order(name: :asc), :id, :name, {}, {multiple: true, prompt: true} %>
   </div>
   <div class="field">
     <%= f.label :box_number %><br>
