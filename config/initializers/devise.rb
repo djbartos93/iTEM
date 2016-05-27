@@ -1,6 +1,19 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # ==> LDAP Configuration
+   config.ldap_logger = true
+   config.ldap_create_user = true
+   #config.ldap_update_password = false
+   config.ldap_config = "#{Rails.root}/config/ldap.yml"
+   config.ldap_check_group_membership = true
+   #config.ldap_check_group_membership_without_admin = false
+   config.ldap_check_attributes = false
+   config.ldap_use_admin_to_bind = true
+   config.ldap_ad_group_check = true
+   #ldap_auth_username_builder (default: Proc.new() {|attribute, login, ldap| "#{attribute}=#{login},#{ldap.base}" })
+
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -34,7 +47,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+   config.authentication_keys = [:username]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -265,4 +278,5 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
 end
