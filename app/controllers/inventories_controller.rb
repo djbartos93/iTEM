@@ -1,5 +1,6 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
+
   # GET /inventories
   # GET /inventories.json
   def index
@@ -81,9 +82,5 @@ class InventoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_params
       params.require(:inventory).permit(:tc_part, :short_desc, :description, :manufacture, :tc_type, :product_part, :tc_cat, :tc_wh, :tc_isle, :tc_shelf, :quantity_hand, :min_quantity, :quantity_used, :last_order, :product_barcode, :tc_barcode, :import_status)
-    end
-
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_in) << :username
     end
 end
