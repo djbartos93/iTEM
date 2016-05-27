@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: 'dashboard#index'
+  get 'dashboard/index'
+  
   resources :cables
-  root to: 'inventories#index'
-
   resources :materials
   resources :jobs
   resources :inventories do
