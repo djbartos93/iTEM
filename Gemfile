@@ -29,11 +29,8 @@ gem 'searchkick'
 #better csv import
 gem 'csv-importer'
 
-#use devise for authentication
-gem 'devise'
-
-#Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
