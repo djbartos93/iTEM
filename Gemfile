@@ -32,6 +32,12 @@ gem 'csv-importer'
 #use devise for authentication
 gem 'devise'
 
+#use active directory with devise
+gem 'devise_ldap_authenticatable', :git => "git://github.com/cschiewek/devise_ldap_authenticatable.git"
+
+#requires net-ldap
+gem 'net-ldap'
+
 #Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

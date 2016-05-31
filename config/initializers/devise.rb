@@ -1,12 +1,34 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # ==> LDAP Configuration 
+  # config.ldap_logger = true
+  # config.ldap_create_user = false
+  # config.ldap_update_password = true
+  # config.ldap_config = "#{Rails.root}/config/ldap.yml"
+  # config.ldap_check_group_membership = false
+  # config.ldap_check_group_membership_without_admin = false
+  # config.ldap_check_attributes = false
+  # config.ldap_use_admin_to_bind = false
+  # config.ldap_ad_group_check = false
+
+  # ==> LDAP Configuration
+   config.ldap_logger = true
+   config.ldap_create_user = true
+  # config.ldap_update_password = true
+   config.ldap_config = "#{Rails.root}/config/ldap.yml"
+   config.ldap_check_group_membership = false
+  # config.ldap_check_group_membership_without_admin = false
+  # config.ldap_check_attributes = false
+  # config.ldap_use_admin_to_bind = true
+  # config.ldap_ad_group_check = true
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a12938fdda34cc2f110403640aa3305fce3c7541da7526f332363048c3b8b760d01f2d1af2a57f273fc9a4ec402ab9224f7630e93e858820b2f8ee19824bef35'
+  # config.secret_key = 'e7a45e68d92df9a739ced0e6e2fdd1a139dd07a904e1ffe8098c9d7fbd8e5ef2dca06a2e33ed5a0af2c1bd8245b6a7e9fd65390995c7386821ff56dcebfefce7'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -34,7 +56,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+   config.authentication_keys = [:username]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -102,7 +124,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '487bceab131aeea7293053652e7c245e0982b3683fca5b3928ac5b482a7663f18661d46a039f99e77d24ee1a7c560360c74ebe0645b41ac02c1bd5279f28d9c3'
+  # config.pepper = '42912196a9f6c891817a49b140f1af6201f33396693929a63c226789d6861a488b93dca278b45668669b1d652fd3284b1e1fb6845c7b0246018b13462da58416'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
