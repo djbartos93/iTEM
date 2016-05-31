@@ -16,11 +16,14 @@ class Inventory < ActiveRecord::Base
     end
   end
 
+  # updates quantity of inventry when adding to jobs
   def self.update_quantity(part, quantity_update)
-    current = Inventory.find_by tc_part: "#{part}"
+    current = Inventory.find_by tc_part: part
     quantity = current.quantity_hand
-    new_quantity = (quantity - quantity_update)
-    selected.update_attribute(:quantity_hand, new_quantity)
+    cq = quantity.to_i
+    qu = quantity_update.to_i
+    new_quantity = (cq - qu)
+    current.update_attribute(:quantity_hand, new_quantity)
   end
 
 

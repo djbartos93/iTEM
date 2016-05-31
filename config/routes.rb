@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :inventories do
     collection { post :import }
+    member {post :generate_tc_barcode}
   end
   get '/' => 'inventories#index'
 

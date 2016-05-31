@@ -8,6 +8,7 @@
       <th>Type</th>
       <th>Box number</th>
       <th>Length</th>
+      <th>Barcode</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
           <% end %></td>
         <td><%= cable.box_number %></td>
         <td><%= cable.length %></td>
+        <td><%= cable.cable_barcode %>
         <td><%= link_to 'Show', cable %></td>
         <td><%= link_to 'Edit', edit_cable_path(cable) %></td>
         <td><%= link_to 'Destroy', cable, method: :delete, data: { confirm: 'Are you sure?' } %></td>

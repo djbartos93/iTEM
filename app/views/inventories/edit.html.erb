@@ -2,5 +2,21 @@
 
 <%= render 'form' %>
 
+
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  Lets put a thing here that lets you generate a barcode for each and every thing by hand
+<% end %>
+
 <%= link_to 'Show', @inventory %> |
 <%= link_to 'Back', inventories_path %>
