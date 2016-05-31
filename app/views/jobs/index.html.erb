@@ -61,3 +61,8 @@
     <% end %>
   </tbody>
 </table>
+<%= form_tag add_materials_jobs_path, multipart: true do %>
+  <%= text_field_tag :part %>
+  <%= number_field_tag :quantity_update %>
+  <%= submit_tag "add_materials" %>
+<% end %>

@@ -16,6 +16,14 @@ class Inventory < ActiveRecord::Base
     end
   end
 
+  def self.update_quantity(part, quantity_update)
+    current = Inventory.find_by tc_part: "#{part}"
+    quantity = current.quantity_hand
+    new_quantity = (quantity - quantity_update)
+    selected.update_attribute(:quantity_hand, new_quantity)
+  end
+
+
   #to generate a barcode for items that do not have easy to use product barcodes
   def generate_tc_barcode
     begin

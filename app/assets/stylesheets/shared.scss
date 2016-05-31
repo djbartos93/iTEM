@@ -1,0 +1,27 @@
+//this is where the style for shared stuff goes, like the header.
+ #header-container {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #333;
+   ul {
+
+
+   }
+   li {
+     float: left;
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     border-right: 1px solid #bbb;
+     border: 1px solid #555;
+     a {
+       display: block;
+       color: white;
+       text-align: center;
+
+     }
+   }
+ }

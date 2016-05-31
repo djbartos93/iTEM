@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  resources :cables
-  root to: 'inventories#index'
 
+  root to: 'dashboard#index'
+  get 'dashboard/index'
+
+  resources :cables
   resources :materials
-  resources :jobs
+  resources :jobs do
+    collection {post :add_materials}
+  end
   resources :inventories do
     collection { post :import }
   end

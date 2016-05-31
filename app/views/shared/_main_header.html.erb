@@ -1,7 +1,26 @@
 <!-- This will be the shared headder on the site as a whole -->
 <div id="header-container">
-  <%= form_tag(search_query_path, method: "post") do %>
-  <span id="search_field">
-    <%= text_field_tag(:search, nil, placeholder: "Search") %>
-  </span>
-  <% end %>
+    <li>
+       <%= form_tag(search_query_path, method: "post") do %>
+         <span id="search_field">
+           <%= text_field_tag(:search, nil, placeholder: "Search inventories") %>
+         </span>
+         <% end %>
+       </li>
+       <li>
+         <a>
+           <%= link_to "Inventory", inventories_path %>
+         </a>
+       </li>
+       <li>
+         <a>
+           <%= link_to "Jobs", jobs_path %>
+         </a>
+         </li>
+       <li>
+         <a>
+           <%= link_to "Materials", materials_path %>
+         </a>
+       </li>
+     </ul>
+   </div>

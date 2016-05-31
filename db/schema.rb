@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20160526204601) do
     t.integer  "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "type_ids"
+    t.integer  "type_id"
   end
 
-  add_index "cables", ["type_ids"], name: "index_cables_on_type_ids"
+  add_index "cables", ["type_id"], name: "index_cables_on_type_id"
 
   create_table "cables_types", id: false, force: :cascade do |t|
     t.integer  "cable_id"
